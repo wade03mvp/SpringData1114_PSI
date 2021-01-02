@@ -32,8 +32,16 @@
                                    modelAttribute="product"
                                    method="post"
                                    action="${pageContext.request.contextPath}/mvc/psi/product">
-                            
-                            
+                            <fieldset>
+                                <legend>Product Form</legend>
+                                <form:input path="id" readonly="true" /><p />
+                                商品名稱 : <br />
+                                <form:input path="name" /><p />
+                                商品圖片 : <br />
+                                <form:input path="image" readonly="true" /><p />
+                                <input type="file" id="myfile" name="myfile" /><p />
+                                <button type="submit" class="pure-button pure-button-primary">Submit</button>
+                            </fieldset>
                             
                         </form:form>
                     </td>
