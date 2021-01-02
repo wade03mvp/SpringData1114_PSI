@@ -24,7 +24,7 @@ public class PSIController {
     @GetMapping(value = {"/product", "/product/{id}", "/product/{name}/{id}"})
     public String readProduct(Model model, 
             @PathVariable Optional<Long> id,
-            @PathVariable Optional<Long> name) {
+            @PathVariable Optional<String> name) {
         String _method = "POST";
         Product product = new Product();
         if(id.isPresent()) {
