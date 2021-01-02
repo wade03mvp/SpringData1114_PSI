@@ -28,7 +28,7 @@
                 <table class="pure-table" style="border: none">
                     <td valign="top">
                         <!-- 表單 -->
-                        <form:form class="pure-from"
+                        <form:form class="pure-form"
                                    modelAttribute="product"
                                    method="post"
                                    action="${pageContext.request.contextPath}/mvc/psi/product">
