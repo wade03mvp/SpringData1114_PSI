@@ -45,6 +45,10 @@ public class Read {
         System.out.println(
                 userRepository.getRetireUsers(65)
         );
+        // 查詢 id 值最大的 User
+        System.out.println(
+                userRepository.getMaxIdUser()
+        );
         ctx.close();
                 
     }
