@@ -5,6 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.hibernate.annotations.Immutable;
@@ -13,10 +14,11 @@ import org.hibernate.annotations.Synchronize;
 
 @Entity
 @Immutable // 只能查詢
-@Synchronize({"T_User"}) // 資料與 T_USER 同步
-@Subselect("SELECT u.id, u.\"NAME\", u.EMAIL, u.BIRTH, \n"
-         + "YEAR(CURRENT_DATE)-YEAR(u.birth) as AGE\n"
-         + "FROM T_USER u")
+//@Synchronize({"T_User"}) // 資料與 T_USER 同步
+//@Subselect("SELECT u.id, u.\"NAME\", u.EMAIL, u.BIRTH, \n"
+//         + "YEAR(CURRENT_DATE)-YEAR(u.birth) as AGE\n"
+//         + "FROM T_USER u")
+@Table(name = "T_USERADDAGE")
 public class UserView {
     @Id
     private Long id;
