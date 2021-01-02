@@ -20,7 +20,10 @@ public class Read {
         // 根據 name 來取得 User
         User u2 = userRepository.getByName("Vincent");
         System.out.println(u2);
-        
+        // SQL 條件: Where name LIKE ?% AND id < ?
+        System.out.println(
+                userRepository.getByNameStartingWithAndIdLessThan("A", 50L)
+        );
         ctx.close();
                 
     }

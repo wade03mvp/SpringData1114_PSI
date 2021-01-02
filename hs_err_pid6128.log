@@ -1,0 +1,107 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 70000 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=6128, tid=0x00000000000009ac
+#
+# JRE version:  (8.0_232-b09) (build )
+# Java VM: OpenJDK 64-Bit Server VM (25.232-b09 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread is native thread
+
+Stack: [0x0000000002990000,0x0000000002a90000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+---------------  P R O C E S S  ---------------
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+
+[error occurred during error reporting (printing compressed oops mode, id 0xc0000005]
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff69dd70000 - 0x00007ff69ddb9000 	C:\Program Files\ojdkbuild\java-1.8.0-openjdk-1.8.0.232-1\jre\bin\java.exe
+0x00007ffcda7a0000 - 0x00007ffcda990000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffcda100000 - 0x00007ffcda1b2000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffcd7fc0000 - 0x00007ffcd8263000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffcd8d80000 - 0x00007ffcd8e23000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffcd8ac0000 - 0x00007ffcd8b5e000 	C:\Windows\System32\msvcrt.dll
+0x00007ffcd9350000 - 0x00007ffcd93e7000 	C:\Windows\System32\sechost.dll
+0x00007ffcd8850000 - 0x00007ffcd8970000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffcd8e30000 - 0x00007ffcd8fc4000 	C:\Windows\System32\USER32.dll
+0x00007ffcd8530000 - 0x00007ffcd8551000 	C:\Windows\System32\win32u.dll
+0x00007ffcd8fd0000 - 0x00007ffcd8ff6000 	C:\Windows\System32\GDI32.dll
+0x00007ffcd86b0000 - 0x00007ffcd8844000 	C:\Windows\System32\gdi32full.dll
+0x00007ffcd8610000 - 0x00007ffcd86ae000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffcd8430000 - 0x00007ffcd852a000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffccb4f0000 - 0x00007ffccb775000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.476_none_e6c4b11b130f2595\COMCTL32.dll
+0x00007ffcd9000000 - 0x00007ffcd9336000 	C:\Windows\System32\combase.dll
+0x00007ffcd8590000 - 0x00007ffcd8610000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffcd9460000 - 0x00007ffcd948e000 	C:\Windows\System32\IMM32.DLL
+0x0000000077e50000 - 0x0000000077f22000 	C:\Program Files\ojdkbuild\java-1.8.0-openjdk-1.8.0.232-1\jre\bin\msvcr100.dll
+0x0000000076fe0000 - 0x000000007789b000 	C:\Program Files\ojdkbuild\java-1.8.0-openjdk-1.8.0.232-1\jre\bin\server\jvm.dll
+0x00007ffcda0f0000 - 0x00007ffcda0f8000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffcd3f90000 - 0x00007ffcd3f99000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffcd93f0000 - 0x00007ffcd945f000 	C:\Windows\System32\WS2_32.dll
+0x00007ffcd55f0000 - 0x00007ffcd5614000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffcd14b0000 - 0x00007ffcd14ba000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffcd5170000 - 0x00007ffcd519d000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x00007ffcd8270000 - 0x00007ffcd82ba000 	C:\Windows\System32\cfgmgr32.dll
+0x00007ffcd3f20000 - 0x00007ffcd3f2f000 	C:\Program Files\ojdkbuild\java-1.8.0-openjdk-1.8.0.232-1\jre\bin\verify.dll
+0x00007ffcd34d0000 - 0x00007ffcd34f9000 	C:\Program Files\ojdkbuild\java-1.8.0-openjdk-1.8.0.232-1\jre\bin\java.dll
+
+VM Arguments:
+java_command: C:\Users\MB-207\Documents\NetBeansProjects\SpringData1114_PSI\target\surefire\surefirebooter5542911608498553534.jar C:\Users\MB-207\Documents\NetBeansProjects\SpringData1114_PSI\target\surefire\surefire6451422905932624696tmp C:\Users\MB-207\Documents\NetBeansProjects\SpringData1114_PSI\target\surefire\surefire_07602499830151346104tmp
+java_class_path (initial): C:\Users\MB-207\Documents\NetBeansProjects\SpringData1114_PSI\target\surefire\surefirebooter5542911608498553534.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\ojdkbuild\java-1.8.0-openjdk-1.8.0.232-1
+PATH=C:\Program Files\ojdkbuild\java-1.8.0-openjdk-1.8.0.232-1\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\MB-207\AppData\Local\Microsoft\WindowsApps;
+USERNAME=MB-teacher
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 18362 (10.0.18362.329)
+
+CPU:total 4 (initial active 4) 
+
+Memory: 4k page, physical 8345568k(452440k free), swap 8345568k(5140k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.232-b09) for windows-amd64 JRE (1.8.0_232-b09), built on Oct 20 2019 21:49:19 by "VssAdministrator" with MS VC++ 10.0 (VS2010)
+
+time: Sat Jan 02 12:16:36 2021
+timezone: 台北標準時間
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
