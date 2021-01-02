@@ -18,7 +18,7 @@ import org.hibernate.annotations.Synchronize;
 //@Subselect("SELECT u.id, u.\"NAME\", u.EMAIL, u.BIRTH, \n"
 //         + "YEAR(CURRENT_DATE)-YEAR(u.birth) as AGE\n"
 //         + "FROM T_USER u")
-@Table(name = "T_USERADDAGE")
+@Table(name = "T_USERADDAGE") // 指定一個已經寫好的 SQL View
 public class UserView {
     @Id
     private Long id;
