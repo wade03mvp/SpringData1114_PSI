@@ -12,5 +12,17 @@
           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
           http://www.springframework.org/schema/data/jpa https://www.springframework.org/schema/data/jpa/spring-jpa.xsd">          
     
+    <!-- 引用外部資源 -->
+    <bean class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
+        <property name="location" value="classpath:derby.properties" />
+    </bean>
+    
+    <!-- 1. 配置 數據源 -->
+    
+    <!-- 2. 配置 JPA 的 EntityManagerFactory -->
+    <!-- 3. 配置 事務管理器 -->
+    <!-- 4. 配置 支援註解@的事務 -->
+    <!-- 5. 配置 Spring Data Jpa -->
+    
     
 </beans>
