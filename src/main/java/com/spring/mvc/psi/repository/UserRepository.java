@@ -6,5 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
+    // 根據 name 來取得 User
+    User getByName(String name);
     
 }

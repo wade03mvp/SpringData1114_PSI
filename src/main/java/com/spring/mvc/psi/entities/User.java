@@ -56,6 +56,11 @@ public class User {
     public void setBirth(Date birth) {
         this.birth = birth;
     }
+
+    @Override
+    public String toString() {
+        return "User{" + "id=" + id + ", name=" + name + ", email=" + email + ", birth=" + birth + '}';
+    }
     
     
 }
