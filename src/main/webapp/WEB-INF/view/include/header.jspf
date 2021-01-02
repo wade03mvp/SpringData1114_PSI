@@ -1,0 +1,7 @@
+<%@ page pageEncoding="UTF-8" %>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
+<title>Company</title>
+<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/layouts/side-menu/styles.css">
