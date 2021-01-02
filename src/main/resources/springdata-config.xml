@@ -48,8 +48,19 @@
     </bean>
     
     <!-- 3. 配置 事務管理器 -->
-    <!-- 4. 配置 支援註解@的事務 -->
-    <!-- 5. 配置 Spring Data Jpa -->
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
     
+    <!-- 4. 配置 支援註解@的事務 -->
+    <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
+    
+    <!-- 5. 配置 Spring Data Jpa -->
+    <!-- base-package 專案的 repository 路徑 -->
+    <jpa:repositories 
+        base-package="com.spring.mvc.psi.repository"
+        entity-manager-factory-ref="entityManagerFactory"
+        transaction-manager-ref="transactionManager">
+    </jpa:repositories>
     
 </beans>
