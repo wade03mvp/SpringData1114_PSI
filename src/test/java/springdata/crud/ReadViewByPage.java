@@ -1,8 +1,11 @@
 package springdata.crud;
 
+import com.spring.mvc.psi.entities.UserView;
 import com.spring.mvc.psi.repository.UserViewRepository;
+import java.util.List;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 
@@ -23,10 +26,11 @@ public class ReadViewByPage {
         // PageRequest(int pageNo, int pageSize, Sort sort) 
         PageRequest pageRequest = new PageRequest(pageNo, pageSize, sort);
         
-        System.out.println(
-            userViewRepository.findAll(pageRequest)
-        );
+        Page<UserView> pageUser = userViewRepository.findAll(pageRequest);
+        List<UserView> users = pageUser.getContent();
         
+        System.out.println(users);
+                
         ctx.close();
                 
     }

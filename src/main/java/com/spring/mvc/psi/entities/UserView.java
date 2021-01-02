@@ -77,7 +77,7 @@ public class UserView {
 
     @Override
     public String toString() {
-        return "UserView{" + "id=" + id + ", name=" + name + ", email=" + email + ", birth=" + birth + ", age=" + age + '}';
+        return "UserView{" + "id=" + id + ", name=" + name + ", email=" + email + ", birth=" + birth + ", age=" + age + "}\n";
     }
 
     
