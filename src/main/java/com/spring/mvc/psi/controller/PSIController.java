@@ -21,12 +21,18 @@ public class PSIController {
     @Autowired
     private ProductRepository productRepository;
     
-    @GetMapping(value = {"/product", "/product/{id}"})
-    public String readProduct(Model model, @PathVariable Optional<Long> id) {
+    @GetMapping(value = {"/product", "/product/{id}", "/product/{name}/{id}"})
+    public String readProduct(Model model, 
+            @PathVariable Optional<Long> id,
+            @PathVariable Optional<Long> name) {
         String _method = "POST";
         Product product = new Product();
         if(id.isPresent()) {
             product = productRepository.findOne(id.get());
+            _method = "PUT";
+            if(name.isPresent() && name.get().equals("delete")) {
+                _method = "DELETE";
+            }
         }
         model.addAttribute("_method", _method);
         model.addAttribute("product", product);
