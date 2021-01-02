@@ -37,6 +37,10 @@ public class Read {
                         date
                 )
         );
+        // 有幾筆資料
+        System.out.println(
+                userRepository.getTotalCount()
+        );
         ctx.close();
                 
     }

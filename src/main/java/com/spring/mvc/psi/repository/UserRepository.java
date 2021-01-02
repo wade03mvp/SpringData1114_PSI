@@ -4,6 +4,7 @@ import com.spring.mvc.psi.entities.User;
 import java.util.Date;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 /*
 方法命名規則
@@ -22,4 +23,9 @@ public interface UserRepository extends JpaRepository<User, Long>{
     
     // SQL 條件: Where id in (?, ?, ? ...) AND birth >= ?
     List<User> getByIdInAndBirthGreaterThanEqual(List<Long> ids, Date birth);
+    
+    // SQL 條件(有幾筆資料):
+    @Query(value = "SELECT count(id) FROM T_USER", nativeQuery = true)
+    Long getTotalCount();
+    
 }
