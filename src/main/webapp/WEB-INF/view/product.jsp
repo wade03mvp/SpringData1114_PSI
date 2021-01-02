@@ -14,8 +14,8 @@
                     var reader = new FileReader();
                     reader.onload = function (e) {
                         $('#image').val(e.target.result);
-                        $('#blah').attr('src', e.target.result);
-                        $('#blah').attr('width', 100);
+                        $('#previewImage').attr('src', e.target.result);
+                        $('#previewImage').attr('width', 100);
                     }
                     reader.readAsDataURL(input.files[0]); // convert to base64 string
                 }
@@ -58,6 +58,7 @@
                                 商品圖片 : <br />
                                 <form:input path="image" readonly="true" /><p />
                                 <input type="file" id="myfile" name="myfile" /><p />
+                                <img id="previewImage"/><br />
                                 <button type="submit" class="pure-button pure-button-primary">Submit</button>
                             </fieldset>
                             
