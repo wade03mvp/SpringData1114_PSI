@@ -23,10 +23,12 @@ public class PSIController {
     
     @GetMapping(value = {"/product", "/product/{id}"})
     public String readProduct(Model model, @PathVariable Optional<Long> id) {
+        String _method = "POST";
         Product product = new Product();
         if(id.isPresent()) {
             product = productRepository.findOne(id.get());
         }
+        model.addAttribute("_method", _method);
         model.addAttribute("product", product);
         model.addAttribute("products", productRepository.findAll());
         return "product";

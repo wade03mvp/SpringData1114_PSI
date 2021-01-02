@@ -69,6 +69,7 @@
                                 <form:input path="image" readonly="true" /><p />
                                 <input type="file" id="myfile" name="myfile" /><p />
                                 <img style="cursor: zoom-in" id="previewImage" src="${ product.image==null?space:product.image }" width="${ product.image==null?'0':'100' }" /><p />
+                                <input type="text" id="_method" name="_method" value="${ _method }" readonly /><p />
                                 <button type="submit" class="pure-button pure-button-primary">Submit</button>
                             </fieldset>
                             
