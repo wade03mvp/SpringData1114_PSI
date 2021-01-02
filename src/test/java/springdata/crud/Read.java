@@ -2,6 +2,10 @@ package springdata.crud;
 
 import com.spring.mvc.psi.entities.User;
 import com.spring.mvc.psi.repository.UserRepository;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -23,6 +27,15 @@ public class Read {
         // SQL 條件: Where name LIKE ?% AND id < ?
         System.out.println(
                 userRepository.getByNameStartingWithAndIdLessThan("A", 50L)
+        );
+        // SQL 條件: Where id in (?, ?, ? ...) AND birth >= ?
+        LocalDate localDate = LocalDate.of(2000, 1, 1);
+        Date date = Date.from(localDate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+        System.out.println(
+                userRepository.getByIdInAndBirthGreaterThanEqual(
+                        Arrays.asList(1L, 3L, 5L, 7L, 9L),
+                        date
+                )
         );
         ctx.close();
                 
