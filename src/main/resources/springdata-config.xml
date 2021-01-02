@@ -18,6 +18,12 @@
     </bean>
     
     <!-- 1. 配置 數據源 -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${jdbc.driver}" />
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+    </bean>
     
     <!-- 2. 配置 JPA 的 EntityManagerFactory -->
     <!-- 3. 配置 事務管理器 -->
