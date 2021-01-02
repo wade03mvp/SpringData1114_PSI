@@ -41,6 +41,10 @@ public class Read {
         System.out.println(
                 userRepository.getTotalCount()
         );
+        // 檢視退休人員
+        System.out.println(
+                userRepository.getRetireUsers(65)
+        );
         ctx.close();
                 
     }

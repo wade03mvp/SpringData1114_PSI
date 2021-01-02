@@ -25,7 +25,13 @@ public interface UserRepository extends JpaRepository<User, Long>{
     List<User> getByIdInAndBirthGreaterThanEqual(List<Long> ids, Date birth);
     
     // SQL 條件(有幾筆資料):
+    // nativeQuery = true 表示使用 T-SQL
     @Query(value = "SELECT count(id) FROM T_USER", nativeQuery = true)
     Long getTotalCount();
     
+    // SQL 條件: SELECT * FROM T_USER u WHERE YEAR(CURRENT_DATE)-YEAR(u.birth) >= 65
+    // 查詢已退休人員 , nativeQuery = false(預設) 表示使用 JPQL
+    // :age 會對應方法的 Integer age 參數 或使用 ?1 表示可對應方法的第一個參數
+    @Query(value = "SELECT u FROM User u WHERE YEAR(CURRENT_DATE)-YEAR(u.birth) >= :age", nativeQuery = false)
+    List<User> getRetireUsers(Integer age);
 }
