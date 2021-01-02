@@ -68,7 +68,7 @@
                                 商品圖片 : <br />
                                 <form:input path="image" readonly="true" /><p />
                                 <input type="file" id="myfile" name="myfile" /><p />
-                                <img style="cursor: zoom-in" id="previewImage"/><br />
+                                <img style="cursor: zoom-in" id="previewImage" src="${ product.image==null?space:product.image }" width="${ product.image==null?'0':'100' }" /><p />
                                 <button type="submit" class="pure-button pure-button-primary">Submit</button>
                             </fieldset>
                             
