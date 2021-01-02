@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix = "fn" uri = "http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix = "form" uri="http://www.springframework.org/tags/form" %>
 <!doctype html>
 <html>
     <head>
@@ -18,10 +19,13 @@
             <%@include file="include/menu.jspf"  %>
 
             <div id="main">
+                
                 <div class="header">
                     <h1>Product</h1>
                     <h2>CRUD</h2>
                 </div>
+                
+                
                 
             </div>
         </div>
