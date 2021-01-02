@@ -25,6 +25,23 @@
                     <h2>CRUD</h2>
                 </div>
                 
+                <table class="pure-table" style="border: none">
+                    <td valign="top">
+                        <!-- 表單 -->
+                        <form:form class="pure-from"
+                                   modelAttribute="product"
+                                   method="post"
+                                   action="${pageContext.request.contextPath}/mvc/psi/product">
+                            
+                            
+                            
+                        </form:form>
+                    </td>
+                    <td valign="top">
+                        <!-- 資料列表 -->
+                    </td>
+                </table>
+                
                 
                 
             </div>
