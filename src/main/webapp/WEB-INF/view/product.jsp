@@ -66,6 +66,34 @@
                     </td>
                     <td valign="top">
                         <!-- 資料列表 -->
+                        <form class="pure-form">
+                            <fieldset>
+                                <legend>Product list</legend>
+                                <table class="pure-table pure-table-bordered" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Image</th>
+                                            <th>Update</th>
+                                            <th>Delete</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <c:forEach var="p" items="${ products }">
+                                            <tr>
+                                                <td>${ p.id }</td>
+                                                <td>${ p.name }</td>
+                                                <td><img style="cursor: zoom-in" id="blah" src="${ p.image==null?space:p.image }" width="${ p.image==null?'0':'100' }" /></td>
+                                                <td><a href="${pageContext.request.contextPath}/mvc/psi/product/${ p.id }">Update</a></td>
+                                                <td><a href="${pageContext.request.contextPath}/mvc/psi/product/delete/${ p.id }">Delete</a></td>
+                                            </tr>
+                                        </c:forEach>
+                                    </tbody>
+                                </table> 
+                            </fieldset>
+                        </form>
                     </td>
                 </table>
                 
