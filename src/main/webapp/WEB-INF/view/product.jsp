@@ -4,10 +4,20 @@
 <%@ taglib prefix = "fn" uri = "http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix = "form" uri="http://www.springframework.org/tags/form" %>
 <!doctype html>
+<!-- 1像素透明 = R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7 -->
+<c:set var="space" value="data:image/jpeg;base64, R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
 <html>
     <head>
         <!-- Head -->
         <%@include file="include/header.jspf"  %>
+        <style>
+            img {
+                transition: -webkit-transform 0.25s ease;
+            }
+            img:active {
+                -webkit-transform: scale(5);
+            }
+        </style>
         <script>
             function readURL(input) {
                 if (input.files && input.files[0]) {
@@ -58,7 +68,7 @@
                                 商品圖片 : <br />
                                 <form:input path="image" readonly="true" /><p />
                                 <input type="file" id="myfile" name="myfile" /><p />
-                                <img id="previewImage"/><br />
+                                <img style="cursor: zoom-in" id="previewImage"/><br />
                                 <button type="submit" class="pure-button pure-button-primary">Submit</button>
                             </fieldset>
                             
@@ -85,7 +95,7 @@
                                             <tr>
                                                 <td>${ p.id }</td>
                                                 <td>${ p.name }</td>
-                                                <td><img style="cursor: zoom-in" id="blah" src="${ p.image==null?space:p.image }" width="${ p.image==null?'0':'100' }" /></td>
+                                                <td><img style="cursor: zoom-in" id="previewImage" src="${ p.image==null?space:p.image }" width="${ p.image==null?'0':'100' }" /></td>
                                                 <td><a href="${pageContext.request.contextPath}/mvc/psi/product/${ p.id }">Update</a></td>
                                                 <td><a href="${pageContext.request.contextPath}/mvc/psi/product/delete/${ p.id }">Delete</a></td>
                                             </tr>
