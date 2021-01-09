@@ -11,6 +11,11 @@
                 console.log('Name: ' + profile.getName());
                 console.log('Image URL: ' + profile.getImageUrl());
                 console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+                // 將 id_token Post 到 mvc/login/check
+                var id_token = googleUser.getAuthResponse().id_token;
+                console.log('id_token: ' + id_token);
+                window.document.getElementById('id_token').value = id_token;
+                window.document.getElementById('myform').submit();
             }
             function signOut() {
                 var auth2 = gapi.auth2.getAuthInstance();
@@ -23,5 +28,8 @@
     <body>
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
         <a href="#" onclick="signOut();">Sign out</a>
+        <form id="myform" name="myform" method="post" action="mvc/login/check">
+            <input type="hidden" id="id_token" name="id_token" /> 
+        </form>
     </body>
 </html>
