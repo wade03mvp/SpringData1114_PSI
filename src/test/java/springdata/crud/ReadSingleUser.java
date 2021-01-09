@@ -1,6 +1,7 @@
 package springdata.crud;
 
 import com.spring.mvc.psi.entities.User;
+import com.spring.mvc.psi.repository.UserPerformanceRepository;
 import com.spring.mvc.psi.repository.UserRepository;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -14,11 +15,8 @@ public class ReadSingleUser {
     @Test
     public void t1() {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("springdata-config.xml");
-        UserRepository userRepository = ctx.getBean(UserRepository.class);
-        // 單筆查詢
-        // 根據 name 來取得 User
-        User u2 = userRepository.getByName("Vincent");
-        System.out.println(u2);
+        UserPerformanceRepository upr = ctx.getBean(UserPerformanceRepository.class);
+        System.out.println(upr.findAll());
         ctx.close();
                 
     }
