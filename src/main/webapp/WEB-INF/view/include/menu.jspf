@@ -2,6 +2,7 @@
 <div id="menu">
     <div class="pure-menu">
         <a class="pure-menu-heading" href="#">
+            <img src="${ sessionScope.pictureUrl }">
             ${ sessionScope.username } 您好
         </a>
         <ul class="pure-menu-list">
