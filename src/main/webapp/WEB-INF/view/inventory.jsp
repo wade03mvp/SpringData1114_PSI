@@ -59,8 +59,6 @@
                                 </fieldset>
                             </form>
                         </td>
-                    </tr>
-                    <tr>
                         <td valign="top">
                             <!-- 列表 -->
                             <form class="pure-form">
