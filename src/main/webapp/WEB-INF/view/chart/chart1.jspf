@@ -9,7 +9,7 @@
         var data = google.visualization.arrayToDataTable([
             ['商品名稱', '目前存量'],
             <c:forEach var="i" items="${ inventories2 }">
-                ['${ i.name }', ${ i.qty }],
+                ['${ i.name }', ${ i.qty==null?0:i.qty }],
             </c:forEach>
         ]);
         var options = {
