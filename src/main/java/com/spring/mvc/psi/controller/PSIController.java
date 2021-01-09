@@ -1,8 +1,11 @@
 package com.spring.mvc.psi.controller;
 
 import com.spring.mvc.psi.entities.Product;
+import com.spring.mvc.psi.entities.User;
 import com.spring.mvc.psi.repository.ProductRepository;
+import com.spring.mvc.psi.repository.UserRepository;
 import java.util.Optional;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,6 +23,9 @@ public class PSIController {
     
     @Autowired
     private ProductRepository productRepository;
+    
+    @Autowired
+    private UserRepository userRepository;
     
     @GetMapping(value = {"/product", "/product/{id}", "/product/{name}/{id}"})
     public String readProduct(Model model, 
@@ -41,7 +47,10 @@ public class PSIController {
     }
     
     @PostMapping(value = {"/product"})
-    public String createProduct(@ModelAttribute("product") Product product) {
+    public String createProduct(@ModelAttribute("product") Product product, HttpSession session) {
+        // 取得操作的使用者
+        User user = userRepository.getByName(session.getAttribute("username")+"");
+        product.setUser(user);
         // 將資料存入
         productRepository.save(product);
         // 重導頁面
