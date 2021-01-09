@@ -29,11 +29,12 @@
                     function drawChart() {
                         chart1();
                         chart2();
+                        chart3();
                     }
                 </script>
                 <%@include file="chart1.jspf"  %>
                 <%@include file="chart2.jspf"  %>
-                
+                <%@include file="chart3.jspf"  %>
             </div>
         </div>
         <!-- Foot -->
