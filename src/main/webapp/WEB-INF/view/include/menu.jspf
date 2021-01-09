@@ -1,7 +1,9 @@
 <%@ page pageEncoding="UTF-8" %>
 <div id="menu">
     <div class="pure-menu">
-        PSI
+        <a class="pure-menu-heading" href="#">
+            OOO 您好
+        </a>
         <ul class="pure-menu-list">
             <li class="pure-menu-item">
                 <a href="${pageContext.request.contextPath}/mvc/psi/product" class="pure-menu-link">Product</a>
