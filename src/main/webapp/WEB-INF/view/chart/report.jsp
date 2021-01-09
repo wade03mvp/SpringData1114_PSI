@@ -22,7 +22,17 @@
                     <h1>Chart</h1>
                     <h2>圖表分析</h2>
                 </div>
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript">
+                    google.charts.load('current', {'packages': ['corechart']});
+                    google.charts.setOnLoadCallback(drawChart);
+                    function drawChart() {
+                        chart1();
+                        chart2();
+                    }
+                </script>
                 <%@include file="chart1.jspf"  %>
+                <%@include file="chart2.jspf"  %>
                 
             </div>
         </div>
