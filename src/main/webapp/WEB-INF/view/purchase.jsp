@@ -87,7 +87,8 @@
                                             <th nowrap>品名</th>
                                             <th nowrap>價格</th>
                                             <th nowrap>數量</th>
-                                            <th>進貨時間</th>
+                                            <th nowrap>進貨時間</th>
+                                            <th nowrap>User</th>
                                         </tr>
                                     </thead>
 
@@ -100,6 +101,7 @@
                                                 <td>${ p.price }</td>
                                                 <td>${ p.quantity }</td>
                                                 <td>${ p.date }</td>
+                                                <td>${ p.user.name }</td>
                                             </tr>
                                         </c:forEach>
                                     </tbody>
