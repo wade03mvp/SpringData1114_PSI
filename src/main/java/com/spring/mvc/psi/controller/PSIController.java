@@ -156,4 +156,11 @@ public class PSIController {
         return "redirect: ./sales";
     }
     
+    // 讀取庫存
+    @GetMapping(value = {"/inventory"})
+    public String readInventory(Model model) {
+        model.addAttribute("inventories", inventoryRepository.findAll());
+        model.addAttribute("inventories2", inventory2Repository.findAll());
+        return "inventory";
+    }
 }
