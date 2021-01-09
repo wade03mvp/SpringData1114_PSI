@@ -18,21 +18,15 @@ import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 @Component
 @Order(1)
 @WebFilter("/mvc/*")
-public class LoginFilter extends BaseFilter {
-    @Autowired
-    private UserRepository userRepository;
+public class LoginFilter extends HttpFilter {
 
     @Override
     protected void doFilter(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
         String username = "Vincent";
-        User user = userRepository.getByName(username);
-        if(user != null) {
-            HttpSession session = req.getSession();
-            session.setAttribute("user", user);
-            chain.doFilter(req, res);
-        } else {
-            res.getWriter().print("No user !");
-        }
+        HttpSession session = req.getSession();
+        session.setAttribute("username", username);
+        chain.doFilter(req, res);
+
     }
-    
+
 }
