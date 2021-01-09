@@ -30,11 +30,13 @@
                         chart1();
                         chart2();
                         chart3();
+                        chart4();
                     }
                 </script>
                 <%@include file="chart1.jspf"  %>
                 <%@include file="chart2.jspf"  %>
                 <%@include file="chart3.jspf"  %>
+                <%@include file="chart4.jspf"  %>
             </div>
         </div>
         <!-- Foot -->
