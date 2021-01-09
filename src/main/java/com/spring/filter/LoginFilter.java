@@ -1,5 +1,6 @@
 package com.spring.filter;
 
+import com.spring.mvc.psi.entities.User;
 import com.spring.mvc.psi.repository.UserRepository;
 import java.io.IOException;
 import javax.servlet.FilterChain;
@@ -8,6 +9,7 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpFilter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
@@ -22,8 +24,15 @@ public class LoginFilter extends BaseFilter {
 
     @Override
     protected void doFilter(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
-        
-        chain.doFilter(req, res);
+        String username = "Vincent";
+        User user = userRepository.getByName(username);
+        if(user != null) {
+            HttpSession session = req.getSession();
+            session.setAttribute("user", user);
+            chain.doFilter(req, res);
+        } else {
+            res.getWriter().print("No user !");
+        }
     }
     
 }
