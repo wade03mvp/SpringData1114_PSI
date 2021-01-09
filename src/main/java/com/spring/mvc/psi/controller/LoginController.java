@@ -49,9 +49,9 @@ public class LoginController {
             session.setAttribute("username", name);
             session.setAttribute("pictureUrl", pictureUrl);
             //return email + ":" + emailVerified + "\nname" + name + ":" + pictureUrl;
-            return "redirect: ./index";
+            return "index";
         } else {
-            return "Invalid ID token.";
+            return "redirect: /index.html";
         }
     }
 }
