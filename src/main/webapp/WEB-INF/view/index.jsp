@@ -19,10 +19,11 @@
 
             <div id="main">
                 <div class="header">
-                    <h1>Company</h1>
-                    <h2>CRUD</h2>
+                    <h1>Welcome To PSI System</h1>
+                    <img src="${ sessionScope.pictureUrl }">
+                    ${ sessionScope.username } 您好
                 </div>
-                <img width="1200" src="${pageContext.request.contextPath}/image/JPA_CRUD_Lab.png"> 
+
             </div>
         </div>
         <!-- Foot -->
