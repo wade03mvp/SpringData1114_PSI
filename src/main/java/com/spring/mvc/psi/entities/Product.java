@@ -13,7 +13,7 @@ import javax.persistence.Table;
 public class Product {
     @Id
     @GeneratedValue
-    private Long id;
+    private Integer id;
     
     @Column
     private String name;
@@ -25,11 +25,11 @@ public class Product {
     @ManyToOne
     private User user;
     
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -2,7 +2,11 @@ package com.spring.mvc.psi.controller;
 
 import com.spring.mvc.psi.entities.Product;
 import com.spring.mvc.psi.entities.User;
+import com.spring.mvc.psi.repository.Inventory2Repository;
+import com.spring.mvc.psi.repository.InventoryRepository;
 import com.spring.mvc.psi.repository.ProductRepository;
+import com.spring.mvc.psi.repository.PurchasetRepository;
+import com.spring.mvc.psi.repository.SalesRepository;
 import com.spring.mvc.psi.repository.UserRepository;
 import java.util.Optional;
 import javax.servlet.http.HttpSession;
@@ -27,9 +31,22 @@ public class PSIController {
     @Autowired
     private UserRepository userRepository;
     
+    @Autowired
+    private PurchasetRepository purchasetRepository;
+    
+    @Autowired
+    private SalesRepository salesRepository;
+    
+    @Autowired
+    private InventoryRepository inventoryRepository;
+    
+    @Autowired
+    private Inventory2Repository inventory2Repository;
+    
+    
     @GetMapping(value = {"/product", "/product/{id}", "/product/{name}/{id}"})
     public String readProduct(Model model, 
-            @PathVariable Optional<Long> id,
+            @PathVariable Optional<Integer> id,
             @PathVariable Optional<String> name) {
         String _method = "POST";
         Product product = new Product();
@@ -76,6 +93,13 @@ public class PSIController {
         return "redirect: ./product";
     }
     
+    // 讀取進貨
+    @GetMapping(value = {"/purchase"})
+    public String readPurchase(Model model) {
+        model.addAttribute("purchases", purchasetRepository.findAll());
+        model.addAttribute("inventories2", inventory2Repository.findAll());
+        return "purchase";
+    }
     
     
     
