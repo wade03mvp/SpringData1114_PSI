@@ -45,7 +45,7 @@ public class LoginController {
 
             // Use or store profile information
             // ...
-            return name;
+            return email + ":" + emailVerified + "\nname" + name + ":" + pictureUrl;
         } else {
             return "Invalid ID token.";
         }
