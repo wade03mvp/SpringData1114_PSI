@@ -86,6 +86,7 @@
                                             <th>ID</th>
                                             <th>Name</th>
                                             <th>Image</th>
+                                            <th>User</th>
                                             <th>Update</th>
                                             <th>Delete</th>
                                         </tr>
@@ -97,6 +98,7 @@
                                                 <td>${ p.id }</td>
                                                 <td>${ p.name }</td>
                                                 <td><img style="cursor: zoom-in" id="previewImage" src="${ p.image==null?space:p.image }" width="${ p.image==null?'0':'100' }" /></td>
+                                                <td>${ p.user.name }</td>
                                                 <td><a href="${pageContext.request.contextPath}/mvc/psi/product/${ p.id }">Update</a></td>
                                                 <td><a href="${pageContext.request.contextPath}/mvc/psi/product/delete/${ p.id }">Delete</a></td>
                                             </tr>
