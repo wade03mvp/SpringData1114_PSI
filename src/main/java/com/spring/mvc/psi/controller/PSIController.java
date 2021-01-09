@@ -58,7 +58,10 @@ public class PSIController {
     }
     
     @PutMapping(value = {"/product"})
-    public String updateProduct(@ModelAttribute("product") Product product) {
+    public String updateProduct(@ModelAttribute("product") Product product, HttpSession session) {
+        // 取得操作的使用者
+        User user = userRepository.getByName(session.getAttribute("username")+"");
+        product.setUser(user);
         // 修改資料
         productRepository.saveAndFlush(product);
         // 重導頁面
