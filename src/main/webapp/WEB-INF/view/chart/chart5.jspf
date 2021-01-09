@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page pageEncoding="UTF-8" %>
 <script type="text/javascript">
-    function chart4() {
+    function chart5() {
         var data = google.visualization.arrayToDataTable([
             ['業務員', '業績'],
             <c:forEach var="i" items="${ userPerformanceRepositories }">
