@@ -14,6 +14,9 @@
             <li>
                 <a href="${pageContext.request.contextPath}/mvc/psi/sales" class="pure-menu-link">Sales</a>
             </li>
+            <li>
+                <a href="${pageContext.request.contextPath}/mvc/psi/inventory" class="pure-menu-link">Inventory</a>
+            </li>
         </ul>
     </div>
 </div>
