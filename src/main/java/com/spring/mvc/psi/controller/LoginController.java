@@ -11,14 +11,14 @@ import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import java.util.Collections;
+import javax.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/login")
 public class LoginController {
 
     @RequestMapping("/check")
-    @ResponseBody
-    public String check(@RequestParam("id_token") String id_token) throws Exception {
+    public String check(@RequestParam("id_token") String id_token, HttpSession session) throws Exception {
         final NetHttpTransport transport = GoogleNetHttpTransport.newTrustedTransport();
         final JacksonFactory jsonFactory = JacksonFactory.getDefaultInstance();
         GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier.Builder(transport, jsonFactory)
@@ -45,7 +45,11 @@ public class LoginController {
 
             // Use or store profile information
             // ...
-            return email + ":" + emailVerified + "\nname" + name + ":" + pictureUrl;
+            session.setAttribute("email", email);
+            session.setAttribute("username", name);
+            session.setAttribute("pictureUrl", pictureUrl);
+            //return email + ":" + emailVerified + "\nname" + name + ":" + pictureUrl;
+            return "redirect: ./index";
         } else {
             return "Invalid ID token.";
         }

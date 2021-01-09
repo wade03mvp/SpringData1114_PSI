@@ -17,16 +17,17 @@ import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
 @Component
 @Order(1)
-@WebFilter("/mvc/*")
+@WebFilter("/mvc/psi/*")
 public class LoginFilter extends HttpFilter {
 
     @Override
     protected void doFilter(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
-        String username = "Roberts"; //Vincent";
         HttpSession session = req.getSession();
-        session.setAttribute("username", username);
-        chain.doFilter(req, res);
-
+        if(session.getAttribute("username") != null) {
+            chain.doFilter(req, res);
+        } else {
+            res.getWriter().print("Please Login in!");
+        }
     }
 
 }
